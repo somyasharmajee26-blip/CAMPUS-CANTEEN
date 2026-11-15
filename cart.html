@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart & Checkout - Campus Canteen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header>
+        <div class="logo">🍔 Campus Canteen</div>
+        <nav>
+            <a href="index.html">Menu</a>
+            <a href="cart.html" class="active">My Cart (<span id="cart-count">0</span>)</a>
+            <a href="blog.html">Canteen Blog (CMS)</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2>Your Pre-Order Checkout</h2>
+
+        <div class="cart-layout">
+            
+            <!-- Left Side: Cart Items & Bill Calculator -->
+            <div class="cart-box">
+                <h3>Selected Food Items</h3>
+                <div id="cart-items-list">
+                    <p style="color: #666; margin-top: 15px;">Your cart is currently empty.</p>
+                </div>
+                
+                <div class="bill-summary">
+                    <div class="bill-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Handling Fee (GST 5%):</span>
+                        <span id="tax">₹0</span>
+                    </div>
+                    <div class="bill-row total">
+                        <span>Final Total:</span>
+                        <span id="final-total">₹0</span>
+                    </div>
+                </div>
+                <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+            </div>
+
+            <!-- Right Side: HTML Form & Payment Selection -->
+            <div class="form-box">
+                <h3>Pickup & Payment Details</h3>
+                <form id="checkout-form" onsubmit="handleCheckout(event)">
+                    
+                    <div class="form-group">
+                        <label for="student-name">Full Name:</label>
+                        <input type="text" id="student-name" required placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-id">Student ID / Roll No:</label>
+                        <input type="text" id="student-id" required placeholder="e.g. 2026/CSE/012">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup-time">Select Pickup Time:</label>
+                        <select id="pickup-time" required>
+                            <option value="">-- Choose Time Slot --</option>
+                            <option value="12:30 PM">12:30 PM (Lunch Rush)</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="1:30 PM">1:30 PM</option>
+                            <option value="2:00 PM">2:00 PM (Late Lunch)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment-method">Payment Gateway Option:</label>
+                        <select id="payment-method" required onchange="togglePaymentMethod()">
+                            <option value="">-- Select Payment Method --</option>
+                            <option value="upi">UPI QR Code (GPay / PhonePe / Paytm)</option>
+                            <option value="cash">Pay Cash at Canteen Counter</option>
+                        </select>
+                    </div>
+
+                    <!-- Dynamic UPI Section (Hidden by default) -->
+                    <div id="upi-section" class="payment-box" style="display: none;">
+                        <p style="font-size: 0.85rem; color: #444; margin-bottom: 5px;">Scan QR to Pay via any UPI App</p>
+                        <img id="upi-qr-img" src="" alt="UPI QR Code">
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 8px;">UPI ID: <strong>campuscanteen@oksbi</strong></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="instructions">Special Instructions:</label>
+                        <textarea id="instructions" rows="2" placeholder="Any dietary notes or extra ketchup?"></textarea>
+                    </div>
+
+                    <button type="submit" class="order-btn" style="width: 100%; margin-top: 10px;">Confirm & Place Pre-Order</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Success Gateway Modal Popup -->
+    <div id="success-modal">
+        <div class="modal-content">
+            <h3>🎉 Order Confirmed!</h3>
+            <p id="modal-msg" style="font-size: 0.95rem; color: #333;"></p>
+            <div class="modal-receipt" id="modal-receipt-details"></div>
+            <button onclick="closeSuccessModal()" class="order-btn" style="width: 100%; margin-top: 10px;">Back to Menu</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Campus Canteen Portal | Built for College Evaluation</p>
+    </footer>
+    <script src="cartCount.js"></script>
+</body>
+</html>

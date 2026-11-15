@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Canteen Pre-Ordering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header>
+        <div class="logo">🍔 Campus Canteen</div>
+        <nav>
+            <a href="index.html" class="active">Menu</a>
+            <a href="cart.html">My Cart (<span id="cart-count">0</span>)</a>
+            <a href="blog.html">Canteen Blog (CMS)</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Skip the Queue, Pre-Order Your Food!</h1>
+        <p>Fresh meals, quick snacks, and refreshing beverages waiting for you.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <main class="container">
+        <h2>Our Menu</h2>
+        
+        <!-- Category Filter Buttons (JavaScript ready) -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterMenu('all')">All</button>
+            <button class="filter-btn" onclick="filterMenu('snack')">Snacks</button>
+            <button class="filter-btn" onclick="filterMenu('meal')">Meals</button>
+            <button class="filter-btn" onclick="filterMenu('beverage')">Beverages</button>
+        </div>
+
+        <!-- Food Grid -->
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-card" data-category="snack">
+                <div class="card-img" style="background-color: #ffeaa7;">🥪</div>
+                <div class="card-content">
+                    <h3>Veg Grilled Sandwich</h3>
+                    <p class="price">₹60</p>
+                    <button class="order-btn" onclick="addToCart('Veg Grilled Sandwich', 60)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-card" data-category="meal">
+                <div class="card-img" style="background-color: #fab1a0;">🍛</div>
+                <div class="card-content">
+                    <h3>Rajma Chawal</h3>
+                    <p class="price">₹90</p>
+                    <button class="order-btn" onclick="addToCart('Rajma Chawal', 90)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-card" data-category="beverage">
+                <div class="card-img" style="background-color: #81ecec;">🧋</div>
+                <div class="card-content">
+                    <h3>Cold Coffee</h3>
+                    <p class="price">₹50</p>
+                    <button class="order-btn" onclick="addToCart('Cold Coffee', 50)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="menu-card" data-category="snack">
+                <div class="card-img" style="background-color: #dfe6e9;">🍟</div>
+                <div class="card-content">
+                    <h3>French Fries</h3>
+                    <p class="price">₹70</p>
+                    <button class="order-btn" onclick="addToCart('French Fries', 70)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Campus Canteen Portal | Built for College Evaluation</p>
+    </footer>
+    <script src="menu.js"></script>
+</body>
+</html>

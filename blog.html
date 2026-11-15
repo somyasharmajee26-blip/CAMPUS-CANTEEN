@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canteen News & Blog - Campus Canteen (CMS)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header>
+        <div class="logo">🍔 Campus Canteen</div>
+        <nav>
+            <a href="index.html">Menu</a>
+            <a href="cart.html">My Cart (<span id="cart-count">0</span>)</a>
+            <a href="blog.html" class="active">Canteen Blog (CMS)</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Layout (WordPress Style: Content + Sidebar) -->
+    <main class="container">
+        <div class="cms-layout">
+            
+            <!-- Left Side: Blog Posts (Main Content Area) -->
+            <section class="blog-posts">
+                <h2 style="border-bottom: 2px solid #0984e3; padding-bottom: 5px; margin-bottom: 20px;">Canteen Updates & Stories</h2>
+
+                <!-- Blog Post 1 -->
+                <article class="post-card">
+                    <div class="post-img" style="background-color: #fab1a0;">🥗</div>
+                    <div class="post-content">
+                        <span class="post-category">Health & Nutrition</span>
+                        <h3>Introducing New Healthy Salad Bowls for Mid-Sem Week!</h3>
+                        <p class="post-meta">Posted on November 8, 2026 by <strong>Admin</strong></p>
+                        <p>To help students stay energized during exam season, we are launching high-protein sprout and fruit salad bowls starting this Monday. Pre-orders are now live on the menu page!</p>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="post-card">
+                    <div class="post-img" style="background-color: #ffeaa7;">☕</div>
+                    <div class="post-content">
+                        <span class="post-category">Special Offers</span>
+                        <h3>Happy Hours: Get 20% Off on All Cold Beverages!</h3>
+                        <p class="post-meta">Posted on November 5, 2026 by <strong>Canteen Manager</strong></p>
+                        <p>Beat the afternoon heat! Every day between 3:00 PM and 4:30 PM, enjoy our signature iced coffees and milkshakes at a special discounted price.</p>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="post-card">
+                    <div class="post-img" style="background-color: #81ecec;">💡</div>
+                    <div class="post-content">
+                        <span class="post-category">Student Feedback</span>
+                        <h3>How We Reduced Canteen Waiting Queues by 40%</h3>
+                        <p class="post-meta">Posted on November 1, 2026 by <strong>Dev Team</strong></p>
+                        <p>Thanks to the new digital pre-ordering portal built by computer science students, average wait times have dropped drastically. Thank you for embracing pre-orders!</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Right Side: WordPress Sidebar -->
+            <aside class="cms-sidebar">
+                <div class="sidebar-widget">
+                    <h3>About Canteen CMS</h3>
+                    <p>This blog section is powered by a custom WordPress-styled architecture, handling announcements, notices, and student feedback loops.</p>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Categories</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">Announcements (5)</a></li>
+                        <li><a href="#">Daily Specials (8)</a></li>
+                        <li><a href="#">Health & Nutrition (3)</a></li>
+                        <li><a href="#">Student Reviews (12)</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Quick Links</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="index.html">Back to Menu</a></li>
+                        <li><a href="cart.html">View Cart & Checkout</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Campus Canteen Portal | Built for College Evaluation</p>
+    </footer>
+
+    <script src="blogCart.js"></script>
+</body>
+</html>
